@@ -26,6 +26,17 @@ void Listar()
     }
 }
 
+void ListarPendentes()
+{
+    foreach (var t in tarefas)
+    {
+        if (!t.Concluida)
+        {
+            Console.WriteLine($"[ ] #{t.Id} — {t.Titulo}");
+        }
+    }
+}
+
 Adicionar("Estudar para a avaliação do Módulo 11");
 Adicionar("Configurar o CLAUDE.md do projeto");
 Adicionar("Criar uma Skill reutilizável");
@@ -38,6 +49,10 @@ Concluir(1);
 Console.WriteLine();
 Console.WriteLine("=== Depois de concluir a tarefa #1 ===");
 Listar();
+
+Console.WriteLine();
+Console.WriteLine("=== Somente as tarefas pendentes ===");
+ListarPendentes();
 
 Console.ReadLine();
 
